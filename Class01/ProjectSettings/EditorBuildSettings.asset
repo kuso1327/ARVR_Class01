@@ -4,4 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/VRTK/LegacyExampleFiles/001_CameraRig_VRPlayArea.unity
+    guid: a4ba916f2807f7948b86d88e859e307b
+  m_configObjects: {}

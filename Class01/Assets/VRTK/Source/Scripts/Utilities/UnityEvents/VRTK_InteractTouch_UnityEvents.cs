@@ -1,5 +1,6 @@
 ﻿namespace VRTK.UnityEventHelper
 {
+    using UnityEngine.UI;
     using UnityEngine;
     using UnityEngine.Events;
     using System;
@@ -37,9 +38,30 @@
             component.ControllerRigidbodyDeactivated -= ControllerRigidbodyDeactivated;
         }
 
+        void Cleartext()
+        {
+            GameObject.Find("阿毛王國").GetComponent<Text>().text = "";
+        }
+
+        private void Start()
+        {
+            Invoke("Cleartext", 2);
+        }
+
         private void ControllerStartTouchInteractableObject(object o, ObjectInteractEventArgs e)
         {
             OnControllerStartTouchInteractableObject.Invoke(o, e);
+            print(e.target.name);
+            if (e.target.name=="BlueCube")
+            {
+                e.target.transform.Translate(0, 0, 3);
+            }
+            else if (e.target.name=="door")
+            {
+                GameObject.Find("阿毛王國").GetComponent<Text>().text = "門";
+                GameObject.Find("door_pivot").GetComponent<Door>().OpenDoor();
+                Invoke("Cleartext", 2);
+            }
         }
 
         private void ControllerTouchInteractableObject(object o, ObjectInteractEventArgs e)

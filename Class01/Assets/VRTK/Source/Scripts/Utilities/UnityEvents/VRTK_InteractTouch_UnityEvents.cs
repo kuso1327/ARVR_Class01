@@ -40,13 +40,22 @@
 
         void Cleartext()
         {
-            GameObject.Find("阿毛王國").GetComponent<Text>().text = "";
+            GameObject.Find("阿毛").GetComponent<Text>().text = "";
+            
         }
+     
+
 
         private void Start()
         {
             Invoke("Cleartext", 2);
+            
         }
+
+        public Texture cat,cat2;
+        public GameObject RawImg;
+
+        
 
         private void ControllerStartTouchInteractableObject(object o, ObjectInteractEventArgs e)
         {
@@ -54,13 +63,24 @@
             print(e.target.name);
             if (e.target.name=="BlueCube")
             {
+                
                 e.target.transform.Translate(0, 0, 3);
+
+                RawImg.SetActive(true);
+                GameObject.Find("阿毛王國").GetComponent<Text>().text = "Q毛";
+                GameObject.Find("MyRawImage").GetComponent<RawImage>().texture = cat;
+
             }
             else if (e.target.name=="door")
             {
-                GameObject.Find("阿毛王國").GetComponent<Text>().text = "門";
+                RawImg.SetActive(true);
+                GameObject.Find("阿毛王國").GetComponent<Text>().text = "壞毛";
+                GameObject.Find("MyRawImage").GetComponent<RawImage>().texture = cat2;
                 GameObject.Find("door_pivot").GetComponent<Door>().OpenDoor();
-                Invoke("Cleartext", 2);
+
+
+
+
             }
         }
 

@@ -2,16 +2,22 @@
 
 public class GM : MonoBehaviour
 {
-    public GameObject TxetImg;
-    
+    public GameObject TextImg;
+
+    //public GameObject canvas;
 
 
 
 
     public void CloseUI()
     {
-        TxetImg.SetActive(false);
+        TextImg.SetActive(false);
     }
+
+    /*public void CloseCanvas()
+    {
+        canvas.SetActive(false);
+    }*/
 
     public void GunTrigger(float Istrigger)
     {

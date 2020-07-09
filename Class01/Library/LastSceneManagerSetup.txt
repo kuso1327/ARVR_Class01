@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/VRTK/LegacyExampleFiles/001_CameraRig_VRPlayArea.unity
+- path: Assets/Scenes/CATMeow.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
